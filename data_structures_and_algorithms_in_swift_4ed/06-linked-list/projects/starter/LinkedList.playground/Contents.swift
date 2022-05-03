@@ -108,3 +108,23 @@ example(of: "array cow") {
     print("array1: \(array1)")
     print("array2: \(array2)")
 }
+
+example(of: "linked list cow") {
+    var list1 = LinkedList<Int>()
+    list1.append(1)
+    list1.append(2)
+    var list2 = list1
+    print("List1: \(list1)")
+    print("List2: \(list2)")
+
+    list2.append(3)
+    print("After appending 3 to list2")
+    print("List1: \(list1)")
+    print("List2: \(list2)")
+
+    print("Removing middle node on list2")
+    if let node = list2.node(at: 0) {
+        list2.remove(after: node)
+    }
+    print("List2: \(list2)")
+}
